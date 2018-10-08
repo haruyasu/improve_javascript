@@ -11,7 +11,7 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 };
 
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
     const newTitle = [];
     if (title.length > limit) {
         title.split(' ').reduce((acc, cur) => {
@@ -76,7 +76,7 @@ const renderButtons = (page, numResults, resPerPage) => {
 };
 
 export const renderResults = (recipes, page = 1, resPerPage = 10) => {
-    // render results of current page
+    // render results of currente page
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
 
@@ -84,5 +84,4 @@ export const renderResults = (recipes, page = 1, resPerPage = 10) => {
 
     // render pagination buttons
     renderButtons(page, recipes.length, resPerPage);
-
 };
