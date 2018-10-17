@@ -40,7 +40,7 @@ const createIngredient = ingredient => `
 export const renderRecipe = (recipe, isLiked) => {
     const markup = `
             <figure class="recipe__fig">
-                <img src="${recipe.img} alt="${recipe.title}" class="recipe__img">
+            	<img src="${recipe.img}" alt="${recipe.title}" class="recipe__img">
                 <h1 class="recipe__title">
                     <span>${recipe.title}</span>
                 </h1>
@@ -85,7 +85,7 @@ export const renderRecipe = (recipe, isLiked) => {
 
             <div class="recipe__ingredients">
                 <ul class="recipe__ingredient-list">
-                    ${recipe.ingredient.map(el => createIngredient(el)).join('')}
+                	${recipe.ingredients.map(el => createIngredient(el)).join('')}
                 </ul>
 
                 <button class="btn-small recipe__btn recipe__btn--add">
@@ -114,8 +114,8 @@ export const renderRecipe = (recipe, isLiked) => {
     elements.recipe.insertAdjacentHTML('afterbegin', markup);
 };
 
-export const updateServingIngredients = recipe => {
-    // Update counts
+export const updateServingsIngredients = recipe => {
+    // Update servings
     document.querySelector('.recipe__info-data--people').textContent = recipe.servings;
 
     // Update ingredients
