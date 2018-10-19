@@ -35,7 +35,7 @@ const controlSearch = async () => {
             clearLoader();
         }
     }
-}
+};
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -101,7 +101,7 @@ const controlList = () => {
         const item = state.list.addItem(el.count, el.unit, el.ingredient);
         listView.renderItem(item);
     });
-}
+};
 
 // Handle delete and update list item events
 elements.shopping.addEventListener('click', e => {
