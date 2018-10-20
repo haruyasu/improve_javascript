@@ -81,8 +81,6 @@ export const renderRecipe = (recipe, isLiked) => {
                 </button>
             </div>
 
-
-
             <div class="recipe__ingredients">
                 <ul class="recipe__ingredient-list">
                 	${recipe.ingredients.map(el => createIngredient(el)).join('')}
@@ -107,7 +105,6 @@ export const renderRecipe = (recipe, isLiked) => {
                     <svg class="search__icon">
                         <use href="img/icons.svg#icon-triangle-right"></use>
                     </svg>
-
                 </a>
             </div>
     `;
