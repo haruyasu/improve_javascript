@@ -168,7 +168,16 @@ window.addEventListener('load', () => {
 
     // Render the existing likes
     state.likes.likes.forEach(like => likesView.renderLike(like));
+
+    likesView.renderDelete(like);
 });
+
+elements.recipe.addEventListener('click', e => {
+    if (e.target.matches('.btn-all-delete')) {
+        console.log("test");
+    }
+});
+
 
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {

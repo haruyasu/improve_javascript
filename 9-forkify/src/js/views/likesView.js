@@ -4,9 +4,6 @@ import { limitRecipeTitle } from './searchView';
 export const toggleLikeBtn = isLiked => {
     const iconString = isLiked ? 'icon-heart' : 'icon-heart-outlined';
     document.querySelector('.recipe__love use').setAttribute('href', `img/icons.svg#${iconString}`);
-
-
-    // icons.svg#icon-heart-outlined
 };
 
 export const toggleLikeMenu = numLikes => {
@@ -30,8 +27,21 @@ export const renderLike = like => {
     elements.likesList.insertAdjacentHTML('beforeend', markup);
 };
 
+export const renderDelete = like => {
+    const markup = `
+    <div class="button_center">
+        <a href="#" class="square_btn btn-all-delete">All DELETE</a>
+    </div>
+    `;
+    elements.likesList.insertAdjacentHTML('beforeend', markup);
+};
+
 export const deleteLike = id => {
     const el = document.querySelector(`.likes__link[href*="${id}"]`).parentElement;
     if (el) el.parentElement.removeChild(el);
 };
 
+export const deleteAllLike = id => {
+    const el = document.querySelector(`.likes__link[href*="${id}"]`).parentElement;
+    if (el) el.parentElement.removeChild(el);
+};
