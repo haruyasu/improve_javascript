@@ -169,15 +169,8 @@ window.addEventListener('load', () => {
     // Render the existing likes
     state.likes.likes.forEach(like => likesView.renderLike(like));
 
-    likesView.renderDelete(like);
+    state.likes.likes.forEach(like => likesView.renderDelete(like));
 });
-
-elements.recipe.addEventListener('click', e => {
-    if (e.target.matches('.btn-all-delete')) {
-        console.log("test");
-    }
-});
-
 
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
@@ -197,5 +190,7 @@ elements.recipe.addEventListener('click', e => {
     } else if (e.target.matches('.recipe__love, .recipe__love *')) {
         // Like Controller
         controlLike();
+    } else if (e.target.matches('.delete__btn--add, .delete__btn--add *')) {
+        console.log("test");
     }
 });

@@ -29,19 +29,17 @@ export const renderLike = like => {
 
 export const renderDelete = like => {
     const markup = `
-    <div class="button_center">
-        <a href="#" class="square_btn btn-all-delete">All DELETE</a>
-    </div>
+    <button class="btn-small delete__btn delete__btn--add">
+        <svg class="search__icon">
+            <use href="img/icons.svg#icon-shopping-cart"></use>
+        </svg>
+        <span>ALL DELETE</span>
+    </button>
     `;
     elements.likesList.insertAdjacentHTML('beforeend', markup);
 };
 
 export const deleteLike = id => {
-    const el = document.querySelector(`.likes__link[href*="${id}"]`).parentElement;
-    if (el) el.parentElement.removeChild(el);
-};
-
-export const deleteAllLike = id => {
     const el = document.querySelector(`.likes__link[href*="${id}"]`).parentElement;
     if (el) el.parentElement.removeChild(el);
 };
