@@ -36,7 +36,7 @@ export const renderDelete = like => {
         <span>ALL DELETE</span>
     </button>
     `;
-    elements.likesList.insertAdjacentHTML('beforeend', markup);
+    elements.likesDelete.insertAdjacentHTML('beforeend', markup);
 };
 
 export const deleteLike = id => {
