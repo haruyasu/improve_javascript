@@ -169,7 +169,8 @@ window.addEventListener('load', () => {
     // Render the existing likes
     state.likes.likes.forEach(like => likesView.renderLike(like));
 
-    state.likes.likes.forEach(like => likesView.renderDelete(like));
+    // state.likes.likes.forEach(like => likesView.renderDelete(like));
+    likesView.renderDelete();
 });
 
 // Handling recipe button clicks
@@ -190,8 +191,11 @@ elements.recipe.addEventListener('click', e => {
     } else if (e.target.matches('.recipe__love, .recipe__love *')) {
         // Like Controller
         controlLike();
-        console.log('Like--------');
-    } else if (e.target.matches('.delete__btn--add, .delete__btn--add *')) {
-        console.log('teaeaaaaaaaaa');
+    }
+});
+
+elements.likesDelete.addEventListener('click', e => {
+    if (e.target.matches('.delete__btn--add, .delete__btn--add *')) {
+        console.log('all delete button');
     }
 });
