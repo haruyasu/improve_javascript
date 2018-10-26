@@ -196,6 +196,10 @@ elements.recipe.addEventListener('click', e => {
 
 elements.likesDelete.addEventListener('click', e => {
     if (e.target.matches('.delete__btn--add, .delete__btn--add *')) {
+        // Get ID
+        // delete all ID
         console.log('all delete button');
+
+
     }
 });
