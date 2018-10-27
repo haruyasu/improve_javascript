@@ -9,6 +9,7 @@ import * as likesView from './views/likesView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
 const state = {};
+var array = []
 
 // Search Controller
 const controlSearch = async () => {
@@ -141,6 +142,14 @@ const controlLike = () => {
 
         // Add like to UI list
         likesView.renderLike(newLike);
+        
+        for (i = 0; i < array.length; i++) {
+            if (array[i].indexOf(currentID) != -1) {
+                array.push(currentID)
+            }
+        }
+
+        console.log(array)
        
     // User has liked current recipe
     } else {
@@ -152,6 +161,12 @@ const controlLike = () => {
 
         // Remove like from UI list
         likesView.deleteLike(currentID);
+
+        array.some(function(v, i){
+            if (v==currentID) array.splice(i,1);
+        });
+
+        console.log(array)
     }
     likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
@@ -199,7 +214,11 @@ elements.likesDelete.addEventListener('click', e => {
         // Get ID
         // delete all ID
         console.log('all delete button');
-
+        
+        for(let v of array) {
+            state.likes.deleteLike(v);
+            likesView.deleteLike(v);
+        }
 
     }
 });
