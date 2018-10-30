@@ -9,7 +9,6 @@ import * as likesView from './views/likesView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
 const state = {};
-var array = []
 
 // Search Controller
 const controlSearch = async () => {
@@ -169,7 +168,6 @@ window.addEventListener('load', () => {
     // Render the existing likes
     state.likes.likes.forEach(like => likesView.renderLike(like));
 
-    // state.likes.likes.forEach(like => likesView.renderDelete(like));
     likesView.renderDelete();
 });
 
@@ -199,10 +197,11 @@ elements.likesDelete.addEventListener('click', e => {
         console.log('all delete button');
 
         state.likes.readStorage();
+        console.log(state.likes.readStorage())
         for (let v of state.likes.likes) {
+            console.log(v.id)
             state.likes.deleteLike(v.id);
             likesView.deleteLike(v.id);
         }
-        
     }
 });
