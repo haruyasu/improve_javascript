@@ -197,11 +197,11 @@ elements.likesDelete.addEventListener('click', e => {
         console.log('all delete button');
 
         state.likes.readStorage();
-        console.log(state.likes.readStorage())
-        for (let v of state.likes.likes) {
-            console.log(v.id)
-            state.likes.deleteLike(v.id);
-            likesView.deleteLike(v.id);
-        }
+        console.log(state.likes)
+        // for (let v of state.likes.likes) {
+        //     console.log(v.id)
+        //     state.likes.deleteLike(v.id);
+        //     likesView.deleteLike(v.id);
+        // }
     }
 });
