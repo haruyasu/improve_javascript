@@ -95,6 +95,7 @@ const controlRecipe = async () => {
 const controlList = () => {
     // Create a new list IF there in none yet
     if (!state.list) state.list = new List();
+    state.list.readStorage();
 
     // Add each ingredient to the list and UI
     state.recipe.ingredients.forEach(el => {
@@ -106,6 +107,7 @@ const controlList = () => {
 // Handle delete and update list item events
 elements.shopping.addEventListener('click', e => {
     const id = e.target.closest('.shopping__item').dataset.itemid;
+    state.list.readStorage();
 
     // Handle the delete button
     if (e.target.matches('.shopping__delete, .shopping__delete *')) {
