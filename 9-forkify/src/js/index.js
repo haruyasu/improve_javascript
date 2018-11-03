@@ -173,6 +173,24 @@ window.addEventListener('load', () => {
     likesView.renderDelete();
 });
 
+// Restore list recipes on page load
+window.addEventListener('load', () => {
+    state.list = new List();
+
+    // Restore list
+    state.list.readStorage();
+    console.log(state.list.items);
+
+    // state.recipe.ingredients.forEach(el => {
+    //     const item = state.list.addItem(el.count, el.unit, el.ingredient);
+    //     listView.renderItem(item);
+    // });
+    // state.lsit.items.forEach(like => listView.renderItem(like));
+
+    // listView.renderItem(state.list.items);
+
+});
+
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
     if (e.target.matches('.btn-decrease, .btn-decrease *')) {
