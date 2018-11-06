@@ -180,6 +180,8 @@ window.addEventListener('load', () => {
 
     // Render the existing list
     state.list.items.forEach(list => listView.renderItem(list));
+
+    listView.renderDelete();
 });
 
 // Handling recipe button clicks
@@ -208,11 +210,21 @@ elements.likesDelete.addEventListener('click', e => {
         console.log('all delete button');
 
         state.likes.readStorage();
-        console.log(state.likes)
+        console.log(state.likes);
         // for (let v of state.likes.likes) {
         //     console.log(v.id)
         //     state.likes.deleteLike(v.id);
         //     likesView.deleteLike(v.id);
         // }
+    }
+});
+
+elements.listDelete.addEventListener('click', e => {
+    if (e.target.matches('.delete_list__btn--add, .delete_list__btn--add *')) {
+        console.log('all delete list button');
+
+        state.list.readStorage();
+        console.log(state.list);
+        state.list.items.forEach(list => listView.deleteItem(list));
     }
 });

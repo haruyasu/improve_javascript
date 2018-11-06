@@ -18,6 +18,18 @@ export const renderItem = item => {
     elements.shopping.insertAdjacentHTML('beforeend', markup);
 };
 
+export const renderDelete = item => {
+    const markup = `
+    <button class="btn-small delete_list__btn delete_list__btn--add">
+        <svg class="search__icon">
+            <use href="img/icons.svg#icon-shopping-cart"></use>
+        </svg>
+        <span>ALL DELETE LIST</span>
+    </button>
+    `;
+    elements.listDelete.insertAdjacentHTML('beforeend', markup);
+};
+
 export const deleteItem = id => {
     const item = document.querySelector(`[data-itemid="${id}"]`);
     if (item) item.parentElement.removeChild(item);
