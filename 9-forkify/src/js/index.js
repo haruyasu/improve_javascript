@@ -211,11 +211,7 @@ elements.likesDelete.addEventListener('click', e => {
 
         state.likes.readStorage();
         console.log(state.likes);
-        // for (let v of state.likes.likes) {
-        //     console.log(v.id)
-        //     state.likes.deleteLike(v.id);
-        //     likesView.deleteLike(v.id);
-        // }
+        state.likes.likes.forEach(id => state.likes.deleteLike(id));
     }
 });
 
@@ -224,7 +220,7 @@ elements.listDelete.addEventListener('click', e => {
         console.log('all delete list button');
 
         state.list.readStorage();
-        console.log(state.list);
-        state.list.items.forEach(list => listView.deleteItem(list));
+        console.log(state.list.items);
+        state.list.items.forEach(id => state.list.deleteItem(id));
     }
 });
