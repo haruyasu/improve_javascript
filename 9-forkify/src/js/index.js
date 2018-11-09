@@ -222,5 +222,11 @@ elements.listDelete.addEventListener('click', e => {
         state.list.readStorage();
         console.log(state.list.items);
         state.list.items.forEach(id => state.list.deleteItem(id));
+
+        // for (var i = 0; i < state.list.items.length; i++) {
+        //     state.list.deleteItem(i)
+            // state.list.items.splice(i, 1);
+        // }
+
     }
 });
