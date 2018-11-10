@@ -208,30 +208,15 @@ elements.recipe.addEventListener('click', e => {
 elements.likesDelete.addEventListener('click', e => {
     if (e.target.matches('.delete__btn--add, .delete__btn--add *')) {
         console.log('all delete button');
-
-        state.likes.readStorage();
-        console.log(state.likes);
-        state.likes.likes.forEach(id => state.likes.deleteLike(id));
+        localStorage.removeItem('likes');
+        window.location.reload();
     }
 });
 
 elements.listDelete.addEventListener('click', e => {
     if (e.target.matches('.delete_list__btn--add, .delete_list__btn--add *')) {
         console.log('all delete list button');
-
-        state.list.readStorage();
-
-        for (let i = 0; i < state.list.items.length; i++) {
-            state.list.alldeleteItem(i);
-        }
-        state.list.persistData();
-
-        // state.list.items.forEach(el => state.list.alldeleteItem(el));
-
-        // for (var i = 0; i < state.list.items.length; i++) {
-        //     state.list.deleteItem(i)
-            // state.list.items.splice(i, 1);
-        // }
-
+        localStorage.removeItem('items');
+        window.location.reload();
     }
 });
