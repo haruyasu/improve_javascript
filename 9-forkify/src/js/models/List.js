@@ -23,6 +23,12 @@ export default class List {
         this.persistData();
     }
 
+    alldeleteItem(index) {
+        // const index = this.items.findIndex(id);
+        console.log(index);
+        this.items.splice(index, 1);
+    }
+
     updateCount(id, newCount) {
         this.items.find(el => el.id === id).count = newCount;
         this.persistData();
@@ -30,11 +36,11 @@ export default class List {
 
     persistData() {
         localStorage.setItem('items', JSON.stringify(this.items));
-        console.log(this.items)
     }
 
     readStorage() {
         const storage = JSON.parse(localStorage.getItem('items'));
+        console.log(storage);
 
         // Restoring list from the localStorage
         if (storage) this.items = storage;

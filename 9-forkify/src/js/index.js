@@ -220,8 +220,13 @@ elements.listDelete.addEventListener('click', e => {
         console.log('all delete list button');
 
         state.list.readStorage();
-        console.log(state.list.items);
-        state.list.items.forEach(id => state.list.deleteItem(id));
+
+        for (let i = 0; i < state.list.items.length; i++) {
+            state.list.alldeleteItem(i);
+        }
+        state.list.persistData();
+
+        // state.list.items.forEach(el => state.list.alldeleteItem(el));
 
         // for (var i = 0; i < state.list.items.length; i++) {
         //     state.list.deleteItem(i)
