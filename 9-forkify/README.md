@@ -11,3 +11,5 @@ Make the project even better
 - Improve the ingredient parsing algorithm
 - Come up with an algorithm for calculating the amount of servings
 - Improve error handling
+- Merge to atnother shopping list when we add a shopping list
+
