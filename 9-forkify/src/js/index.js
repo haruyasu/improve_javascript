@@ -100,6 +100,7 @@ const controlList = () => {
     state.recipe.ingredients.forEach(el => {
         const item = state.list.addItem(el.count, el.unit, el.ingredient);
         listView.renderItem(item);
+        // console.log(el.ingredient)
     });
 };
 
