@@ -1,6 +1,6 @@
-Make the project even better
+# Make the project even better
 
-TODO LIST
+## TODO LIST
 - Implement button to delete all shopping list items
  - need to make all delete button
 - Save shopping list date in local storage
