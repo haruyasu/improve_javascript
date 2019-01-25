@@ -25,7 +25,7 @@ body {
     font-weight: 400;
     line-height: 1.6;
     color: #655A56;
-    background-image: linear-gradient(to right bottom, rgb(45, 60, 78), rgb(73, 147, 216));
+    background-image: linear-gradient(to right bottom, rgb(240, 180, 52), rgb(124, 99, 15));
     background-size: cover;
     background-repeat: no-repeat;
     min-height: calc(100vh - 2 * 4vw);
